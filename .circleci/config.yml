@@ -2,7 +2,7 @@ version: 2.1
 
 jobs:
 
-  - Build:
+    Build:
       docker: 
         - image: 
       steps:
