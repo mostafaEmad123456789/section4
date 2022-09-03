@@ -9,6 +9,9 @@ Resources:
       KeyName: project3
       ImageId: 'ami-052efd3df9dad4825' 
       InstanceType: t3.micro
+      Tags:
+        - Key: "project"
+          Value: "section4"
   InstanceSecurityGroup:
     Type: 'AWS::EC2::SecurityGroup'
     Properties:
