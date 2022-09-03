@@ -3,11 +3,14 @@ version: 2.1
 jobs:
 
   - Build:
-      docker: amazon/awsCLI
+      docker: 
+        - image: amazon/aws-cli
       steps:
-        run:
+        - checkout
+        - run: echo "Hello"
 
 
 workflows:
   CICD-Workflow:
-    - Build
+    jobs:
+      - Build
