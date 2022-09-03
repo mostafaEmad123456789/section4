@@ -4,7 +4,7 @@ jobs:
 
     Build:
       docker: 
-        - image: 
+        - image: amazon/aws-cli
       steps:
         - checkout
         - run: 'echo "HI"'
