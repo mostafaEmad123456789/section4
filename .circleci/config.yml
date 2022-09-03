@@ -4,10 +4,10 @@ jobs:
 
   - Build:
       docker: 
-        - image: amazon/aws-cli
+        - image: 
       steps:
         - checkout
-        - run: "echo 'Hello'"
+        - run: 'echo "HI"'
 
 
 workflows:
