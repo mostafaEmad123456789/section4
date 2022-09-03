@@ -29,7 +29,7 @@ jobs:
             fingerprints: ["c4:65:29:ae:25:26:ef:49:25:2d:54:e2:f2:87:40:f0"]
         - run:
             name: "Installing Ansible"
-            command: apk add --update ansible    
+            command: apt-get install --update ansible    
         - run:
             name: "Configuring Servers"
             command: sh ansible_start.sh     
