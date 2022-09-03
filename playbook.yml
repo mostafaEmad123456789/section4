@@ -3,7 +3,6 @@
   hosts: web
   user: ubuntu
   become: true
-  gather_facts: no
   roles:
     - setup
 
