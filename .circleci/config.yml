@@ -13,7 +13,7 @@ jobs:
         - run:
             name: "Generating Inventory File"
             command: sh get_instances_list.sh
-        - presist_workspace:
+        - persist_to_workspace:
             root: .
             paths: .
 
