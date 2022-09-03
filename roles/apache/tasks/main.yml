@@ -1,0 +1,13 @@
+---
+
+- name: "Conigureing A WEB server"
+  yum:
+      name: ["httpd"]
+      state: latest
+      update_cache: yes
+
+- name: "Install Index.html Page"
+  shell: echo "Hello World From Ansible" > /var/www/html/index.html
+
+- name: "Starting HTTPD service"
+  shell: systemctl start httpd

@@ -1,0 +1,10 @@
+---
+- name: "configuration play."
+  hosts: all
+  user: ubuntu
+  become: true
+  roles:
+    - setup
+    #- configure-prometheus-node-exporter
+    #- configure-server1
+
