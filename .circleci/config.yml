@@ -10,6 +10,9 @@ jobs:
         - run: 
             name: "Creating Cloudformation Stack"
             command: "aws cloudformation deploy --stack-name Section4 --template-file cloudTemplate.yml --region us-east-1"
+        - run:
+            name: "Generating Inventory File"
+            command: sh get_instances_list.sh
 
     Configure-Infrastructure:
       docker: 
@@ -20,10 +23,7 @@ jobs:
             fingerprints: ["94:36:fb:99:30:ef:fa:14:df:f2:ab:34:01:f0:72:4c"]
         - run:
             name: "Installing Ansible"
-            command: apk add --update ansible
-        - run:
-            name: "Generating Inventory File"
-            command: sh get_instances_list.sh
+            command: apk add --update ansible    
         - run:
             name: "Configuring Servers"
             command: sh ansible_start.sh     

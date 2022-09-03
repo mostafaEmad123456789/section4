@@ -5,6 +5,4 @@
   become: true
   roles:
     - setup
-    #- configure-prometheus-node-exporter
-    #- configure-server1
 
