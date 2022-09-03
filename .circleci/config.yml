@@ -1,5 +1,9 @@
 version: 2.1
 
+orbs:
+
+  aws-cli: circleci/aws-cli@2.0.3
+
 jobs:
 
     Create-Infrastructure:
@@ -19,7 +23,7 @@ jobs:
 
     Configure-Infrastructure:
       docker: 
-        - image: circleci/node:13.8.0
+        - image: python:3.7-alpine3.11
       steps:
         - checkout
         - restore_cache:
@@ -29,7 +33,7 @@ jobs:
             fingerprints: ["c4:65:29:ae:25:26:ef:49:25:2d:54:e2:f2:87:40:f0"]
         - run:
             name: "Installing Ansible"
-            command: apt-get install ansible    
+            command: apk add --update ansible    
         - run:
             name: "Configuring Servers"
             command: sh ansible_start.sh     
