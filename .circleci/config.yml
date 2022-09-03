@@ -2,15 +2,17 @@ version: 2.1
 
 jobs:
 
-    Build:
+    Create-Infrastructure:
       docker: 
         - image: amazon/aws-cli
       steps:
         - checkout
-        - run: 'echo "HI"'
+        - run: 
+            name: "Creating Cloudformation Stack"
+            command: "aws cloudformation deploy --stack-name Section4 --template-file cloudTemplate.yml --region us-east-1"
 
 
 workflows:
   CICD-Workflow:
     jobs:
-      - Build
+      - Create-Infrastructure
