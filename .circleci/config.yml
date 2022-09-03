@@ -26,7 +26,7 @@ jobs:
             keys:
               - inventory
         - add_ssh_keys:
-            fingerprints: ["94:36:fb:99:30:ef:fa:14:df:f2:ab:34:01:f0:72:4c"]
+            fingerprints: ["c4:65:29:ae:25:26:ef:49:25:2d:54:e2:f2:87:40:f0"]
         - run:
             name: "Installing Ansible"
             command: apk add --update ansible    
