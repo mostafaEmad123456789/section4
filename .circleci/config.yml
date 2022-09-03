@@ -13,17 +13,17 @@ jobs:
         - run:
             name: "Generating Inventory File"
             command: sh get_instances_list.sh
-      presist_workspace:
-        root: .
-        paths: .
+        - presist_workspace:
+            root: .
+            paths: .
 
     Configure-Infrastructure:
       docker: 
         - image: python:3.7-alpine3.11
-      attach_workspace:
-        at: .
       steps:
         - checkout
+        - attach_workspace:
+            at: .
         - add_ssh_keys:
             fingerprints: ["94:36:fb:99:30:ef:fa:14:df:f2:ab:34:01:f0:72:4c"]
         - run:
