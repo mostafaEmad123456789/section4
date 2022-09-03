@@ -36,7 +36,7 @@ jobs:
             command: apk add --update ansible    
         - run:
             name: "Configuring Servers"
-            command: sh ansible_start.sh     
+            command: ansible-playbook playbook.yml -i inventory.txt    
 workflows:
   CICD-Workflow:
     jobs:
