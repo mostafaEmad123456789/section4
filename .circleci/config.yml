@@ -22,8 +22,11 @@ jobs:
             name: "Installing Ansible"
             command: apk add --update ansible
         - run:
-            name: "Configure Servers"
-            command: sh ansible_start.sh
+            name: "Generating Inventory File"
+            command: sh get_instances_list.sh
+        - run:
+            name: "Configuring Servers"
+            command: sh ansible_start.sh     
 workflows:
   CICD-Workflow:
     jobs:
